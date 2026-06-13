@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
+import heroVideo from '../assets/hero-background.mp4'
 
 export default function HomePage() {
   return (
@@ -8,19 +9,19 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero Section with Video Background */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden min-h-[80vh] flex items-center justify-center">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="/hero-background.mp4" type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
         </video>
-        <div className="absolute top-0 left-0 w-full h-full bg-black/40 -z-10"></div>
+        <div className="absolute inset-0 w-full h-full bg-black/50 z-10"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'LEMON MILK, sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
               Welcome to RAAHI
