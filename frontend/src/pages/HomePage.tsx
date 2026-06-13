@@ -10,16 +10,17 @@ export default function HomePage() {
       {/* Hero Section with Video Background */}
       <div className="relative flex items-center justify-center min-h-[85vh] overflow-hidden">
         
-        {/* Background MP4 Video (Using a high quality direct mp4 link) */}
-        <video 
-  autoPlay={true} 
-  loop={true} 
-  muted={true} 
-  playsInline={true}
-  className="absolute top-0 left-0 w-full h-full object-cover z-0"
->
-  <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-mountain-valley-27926-large.mp4" type="video/mp4" />
-</video>
+        {/* Background MP4 Video (auto‑play, muted, looping) */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="https://cdn.coverr.co/videos/coverr-aerial-drone-over-mountain-range-1645/1080p.mp4"
+        >
+          Your browser does not support the video tag.
+        </video>
 
         {/* Black Shadow Overlay (50% opacity) */}
         <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
