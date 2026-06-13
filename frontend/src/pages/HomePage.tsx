@@ -1,114 +1,113 @@
-// File: frontend/src/pages/HomePage.tsx
 import { Link } from 'react-router-dom'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-[#FFFAC3]/30 flex flex-col">
       <Navbar />
 
       {/* Hero Section with Video Background */}
-      <div className="relative flex items-center justify-center min-h-[85vh] overflow-hidden">
-        {/* Background MP4 Video (auto‑play, muted, looping) */}
+      <div className="relative w-full overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-          src="/videos/raahi-hero.mp4"   // <-- Local video path
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10"
         >
-          Your browser does not support the video tag.
+          <source src="/hero-background.mp4" type="video/mp4" />
         </video>
+        <div className="absolute top-0 left-0 w-full h-full bg-black/40 -z-10"></div>
 
-        {/* Black Shadow Overlay (50% opacity) */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-
-        {/* Hero Content on top of video */}
-        <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-20">
-          <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-xl"
-            style={{ fontFamily: 'LEMON MILK, sans-serif' }}
-          >
-            Welcome to RAAHI
-          </h1>
-          <p className="text-xl sm:text-2xl text-gray-200 mb-10 font-medium drop-shadow-md max-w-3xl mx-auto">
-            Your Gateway to Pakistan's Most Beautiful Destinations
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Link
-              to="/packages"
-              className="w-full sm:w-auto bg-[#566614] text-white px-10 py-4 rounded-xl text-lg font-bold hover:bg-[#6E6B40] transition-transform transform hover:scale-105 shadow-2xl"
-            >
-              Browse Packages
-            </Link>
-            <Link
-              to="/login/user"
-              className="w-full sm:w-auto bg-transparent text-white px-10 py-4 rounded-xl text-lg font-bold border-2 border-white hover:bg-white/20 transition-transform transform hover:scale-105 backdrop-blur-sm"
-            >
-              Get Started
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Features */}
-      <div className="flex-grow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
-            <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all border border-gray-100 transform hover:-translate-y-2 duration-300">
-              <h3 className="text-2xl font-bold mb-4 text-[#566614]" style={{ fontFamily: 'LEMON MILK, sans-serif' }}>
-                Explore Destinations
-              </h3>
-              <p className="text-gray-600 text-lg">
-                Discover amazing travel packages to Hunza, Swat, Naran, Skardu, and more
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all border border-gray-100 transform hover:-translate-y-2 duration-300">
-              <h3 className="text-2xl font-bold mb-4 text-[#566614]" style={{ fontFamily: 'LEMON MILK, sans-serif' }}>
-                AI Travel Assistant
-              </h3>
-              <p className="text-gray-600 text-lg">
-                Get personalized recommendations using our intelligent travel assistant
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all border border-gray-100 transform hover:-translate-y-2 duration-300">
-              <h3 className="text-2xl font-bold mb-4 text-[#566614]" style={{ fontFamily: 'LEMON MILK, sans-serif' }}>
-                Easy Booking
-              </h3>
-              <p className="text-gray-600 text-lg">
-                Book your dream vacation with just a few clicks
-              </p>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="mt-20 text-center bg-[#FFFAC3]/30 p-10 rounded-3xl">
-            <p className="text-gray-800 text-xl font-medium mb-6">
-              Already have an account?
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 relative z-10">
+          <div className="text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'LEMON MILK, sans-serif', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+              Welcome to RAAHI
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-200 mb-8 font-medium drop-shadow-md">
+              Your Gateway to Pakistan's Most Beautiful Destinations
             </p>
-            <div className="flex justify-center items-center space-x-6">
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <Link
+                to="/packages"
+                className="w-full sm:w-auto bg-[#566614] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#6E6B40] transition-colors shadow-lg hover:shadow-xl"
+              >
+                Browse Packages
+              </Link>
               <Link
                 to="/login/user"
-                className="text-blue-600 hover:text-blue-800 font-bold text-lg hover:underline transition-colors"
+                className="w-full sm:w-auto bg-white/90 text-[#566614] px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white transition-colors shadow-lg"
               >
-                User Login →
-              </Link>
-              <span className="text-gray-400">|</span>
-              <Link
-                to="/login/agency"
-                className="text-blue-600 hover:text-blue-800 font-bold text-lg hover:underline transition-colors"
-              >
-                Agency Login →
+                Get Started
               </Link>
             </div>
           </div>
         </div>
       </div>
 
+            {/* Travel Video Section */}
+            <div className="mt-16 sm:mt-24 max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-[#FFFAC3]/50">
+              <div className="relative pt-[56.25%]">
+                <iframe 
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/S2gP1yMof4o?autoplay=1&mute=1&loop=1&playlist=S2gP1yMof4o&controls=0" 
+                  title="Beautiful Northern Pakistan" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Features */}
+            <div className="mt-12 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'LEMON MILK, sans-serif' }}>
+                  Explore Destinations
+                </h3>
+                <p className="text-gray-600">
+                  Discover amazing travel packages to Hunza, Swat, Naran, Skardu, and more
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'LEMON MILK, sans-serif' }}>
+                  AI Travel Assistant
+                </h3>
+                <p className="text-gray-600">
+                  Get personalized recommendations using our intelligent travel assistant
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: 'LEMON MILK, sans-serif' }}>
+                  Easy Booking
+                </h3>
+                <p className="text-gray-600">
+                  Book your dream vacation with just a few clicks
+                </p>
+              </div>
+            </div>
+
+        {/* Quick Links */}
+        <div className="mt-12 text-center">
+          <p className="text-gray-600 mb-4">Already have an account?</p>
+          <div className="flex justify-center space-x-4">
+            <Link
+              to="/login/user"
+              className="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              User Login →
+            </Link>
+            <span className="text-gray-400">|</span>
+            <Link
+              to="/login/agency"
+              className="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Agency Login →
+            </Link>
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   )

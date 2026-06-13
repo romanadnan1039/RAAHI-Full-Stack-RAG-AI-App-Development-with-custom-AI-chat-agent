@@ -1,4 +1,5 @@
 import express, { Express } from 'express'
+import { createProxyMiddleware } from 'http-proxy-middleware'
 import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
@@ -57,6 +58,15 @@ app.use('/api/reviews', reviewRoutes)
 app.use('/api/notifications', notificationRoutes)
 app.use('/api/agencies', agencyRoutes)
 app.use('/api/ai', aiRoutes)
+
+// AI Agent Proxy
+app.use('/api/agent', createProxyMiddleware({
+  target: process.env.AI_AGENT_URL || 'http://localhost:5001',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api/agent': '', // remove /api/agent prefix when forwarding
+  },
+}))
 
 // Error handling
 app.use(notFoundHandler)

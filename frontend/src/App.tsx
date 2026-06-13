@@ -19,8 +19,8 @@ function App() {
           className="border-b border-amber-400 bg-amber-100 px-4 py-3 text-center text-sm text-amber-950"
         >
           <strong className="font-semibold">Backend URL missing or still a documentation example.</strong> Open{' '}
-          <strong>Railway</strong> → your backend service → copy the <strong>public HTTPS URL</strong> (it looks like{' '}
-          <code className="rounded bg-amber-200/80 px-1">https://something-real.up.railway.app</code>
+          <strong>Render</strong> → your backend service → copy the <strong>public HTTPS URL</strong> (it looks like{' '}
+          <code className="rounded bg-amber-200/80 px-1">https://your-service.onrender.com</code>
           ). In <strong>Vercel</strong> → Settings → Environment Variables set{' '}
           <code className="rounded bg-amber-200/80 px-1">VITE_API_URL</code> to that URL (with or without{' '}
           <code className="rounded bg-amber-200/80 px-1">/api</code>),{' '}
