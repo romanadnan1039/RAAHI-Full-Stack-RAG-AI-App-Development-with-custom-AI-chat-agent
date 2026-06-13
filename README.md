@@ -1,6 +1,8 @@
 # RAAHI - Travel Marketplace
 
-A full-stack travel marketplace platform for Pakistan with AI-powered travel assistant.
+A full-stack travel marketplace platform for Pakistan with a **Custom AI-powered travel assistant**.
+
+**Note:** This project does **not** rely on the OpenAI API. It is powered entirely by a proprietary **custom 8-scoring algorithm** that accurately matches and recommends travel packages based on user criteria.
 
 ## Project Structure
 
@@ -8,18 +10,19 @@ A full-stack travel marketplace platform for Pakistan with AI-powered travel ass
 RAAHI_FYP/
 ├── frontend/          # React + TypeScript frontend
 ├── backend/           # Node.js/Express + TypeScript backend
-└── ai-agent/          # LangChain-based AI assistant service
+└── ai-agent/          # Custom 8-scoring algorithm AI assistant service
 ```
 
 ## Features
 
+- **Custom AI Travel Assistant**: Proprietary 8-scoring algorithm for precise, personalized package recommendations without any external API costs (No OpenAI needed!).
 - **Dual Authentication**: Separate login for tourists and travel agencies
-- **AI Travel Assistant**: Natural language queries for package recommendations
 - **Package Management**: CRUD operations for travel packages
 - **Booking System**: Complete booking flow with real-time notifications
 - **Reviews & Ratings**: User reviews for packages
 - **Real-time Notifications**: WebSocket-based notifications for agencies
 - **Pakistani Focus**: All packages and data focused on Pakistani destinations
+- **Immersive UI**: Beautiful full-screen video hero background for a premium user experience
 
 ## Tech Stack
 
@@ -40,8 +43,7 @@ RAAHI_FYP/
 
 ### AI Agent
 - Node.js + TypeScript
-- OpenAI API
-- LangChain (ready for integration)
+- **Custom 8-Scoring Algorithm** (In-house recommendation engine)
 
 ## Setup Instructions
 
@@ -65,8 +67,6 @@ CREATE DATABASE raahi_db;
 
 ```bash
 cd backend
-
-# Install dependencies
 npm install
 
 # Create .env file (copy from .env.example)
@@ -91,8 +91,6 @@ Backend will run on `http://localhost:5000`
 
 ```bash
 cd frontend
-
-# Install dependencies
 npm install
 
 # Create .env file (copy from .env.example)
@@ -107,12 +105,10 @@ Frontend will run on `http://localhost:5173`
 
 ```bash
 cd ai-agent
-
-# Install dependencies
 npm install
 
 # Create .env file (copy from .env.example)
-# Add your OPENAI_API_KEY
+# No OpenAI API key is needed!
 
 # Start AI agent server
 npm run dev
@@ -139,7 +135,6 @@ VITE_WS_URL=ws://localhost:5000
 
 ### AI Agent (.env)
 ```env
-OPENAI_API_KEY=your-openai-api-key
 BACKEND_API_URL=http://localhost:5000/api
 ```
 
@@ -166,8 +161,8 @@ BACKEND_API_URL=http://localhost:5000/api
 - `POST /api/bookings/:id/cancel` - Cancel booking
 
 ### AI Agent
-- `POST /api/ai/chat` - Chat with AI assistant
-- `POST /api/ai/recommend` - Get package recommendations
+- `POST /api/ai/chat` - Chat with custom AI assistant
+- `POST /api/ai/recommend` - Get package recommendations via 8-scoring algorithm
 - `POST /api/ai/book` - Book via AI
 
 ## Seed Data
@@ -182,7 +177,7 @@ The database is seeded with:
 
 1. **Tourist Flow**:
    - Register/Login as tourist
-   - Use AI chat to find packages: "I want to go to Hunza for 2 days under 20K"
+   - Use custom AI chat to find packages: "I want to go to Hunza for 2 days under 20K"
    - Select a recommended package
    - Complete booking
 
