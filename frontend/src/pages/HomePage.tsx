@@ -47,8 +47,10 @@ export default function HomePage() {
         </div>
       </div>
 
-            {/* Travel Video Section */}
-            <div className="mt-16 sm:mt-24 max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-[#FFFAC3]/50">
+      {/* Main Content Wrapper */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16">
+        {/* Travel Video Section */}
+        <div className="mt-16 sm:mt-24 max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-[#FFFAC3]/50">
               <div className="relative pt-[56.25%]">
                 <iframe 
                   className="absolute top-0 left-0 w-full h-full"
