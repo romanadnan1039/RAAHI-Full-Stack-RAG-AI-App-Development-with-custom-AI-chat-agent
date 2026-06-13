@@ -49,19 +49,6 @@ export default function HomePage() {
 
       {/* Main Content Wrapper */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16">
-        {/* Travel Video Section */}
-        <div className="mt-16 sm:mt-24 max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-[#FFFAC3]/50">
-              <div className="relative pt-[56.25%]">
-                <iframe 
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/S2gP1yMof4o?autoplay=1&mute=1&loop=1&playlist=S2gP1yMof4o&controls=0" 
-                  title="Beautiful Northern Pakistan" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
 
             {/* Features */}
             <div className="mt-12 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
